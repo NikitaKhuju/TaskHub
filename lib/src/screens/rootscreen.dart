@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:taskhub/src/screens/homescreen.dart';
-import 'package:taskhub/src/screens/profilescreen.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:taskhub/utils/colors.dart';
 
 class RootScreen extends StatefulWidget {
   const RootScreen({Key? key}) : super(key: key);
@@ -13,7 +13,7 @@ class RootScreen extends StatefulWidget {
 
 class _RootScreenState extends State<RootScreen> {
   int selectedIndex = 0;
-  List<Widget> pages = [Homescreen(), ProfileScreen()];
+  List<Widget> pages = [Homescreen()];
   void navigateBottomBar(int index) {
     setState(() {
       selectedIndex = index;
@@ -42,14 +42,14 @@ class _RootScreenState extends State<RootScreen> {
                 GButton(
                   padding: const EdgeInsets.all(14),
                   borderRadius: BorderRadius.circular(50),
-                  backgroundColor: Colors.amber[300],
+                  backgroundColor: primaryColor,
                   icon: Icons.home,
                   iconSize: 35,
                 ),
                 GButton(
                   padding: const EdgeInsets.all(14),
                   borderRadius: BorderRadius.circular(50),
-                  backgroundColor: Colors.amber[300],
+                  backgroundColor: primaryColor,
                   icon: Icons.person,
                   iconSize: 35,
                 )

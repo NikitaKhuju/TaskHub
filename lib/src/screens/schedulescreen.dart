@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -122,18 +123,6 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                                 color: Colors.white,
                               ),
                             ),
-                            Container(
-                              height: 60,
-                              width: 60,
-                              decoration: BoxDecoration(
-                                  color: Colors.amber[300],
-                                  borderRadius: BorderRadius.circular(50)),
-                              child: Image.asset(
-                                "assets/images/profile.png",
-                                height: 20,
-                                width: 20,
-                              ),
-                            )
                           ]),
                       const SizedBox(height: 25),
                       const Text('Title',

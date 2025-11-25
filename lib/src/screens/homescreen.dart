@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:taskhub/components/local_storage.dart';
@@ -61,23 +62,23 @@ class _HomescreenState extends State<Homescreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  GestureDetector(
-                    onTap: () => {
-                      Get.to(ScheduleScreen(
-                        onTaskAdded: () {
-                          setState(() {
-                            //Update the taskBox to reflect the new task
-                            taskBox = Hive.box<Task>('tasks');
-                          });
-                        },
-                      )),
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        GestureDetector(
+                          onTap: () => {
+                            Get.to(ScheduleScreen(
+                              onTaskAdded: () {
+                                setState(() {
+                                  //Update the taskBox to reflect the new task
+                                  taskBox = Hive.box<Task>('tasks');
+                                });
+                              },
+                            )),
+                          },
+                          child: Container(
                             padding: const EdgeInsets.fromLTRB(6, 6, 15, 6),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(40),
@@ -95,7 +96,7 @@ class _HomescreenState extends State<Homescreen> {
                                       color: Colors.amber[300],
                                       size: 17,
                                     )),
-                                const SizedBox(width: 10),
+                                const SizedBox(width: 20),
                                 const Text(
                                   'Create New Task',
                                   style: TextStyle(
@@ -106,20 +107,8 @@ class _HomescreenState extends State<Homescreen> {
                               ],
                             ),
                           ),
-                          Container(
-                            height: 60,
-                            width: 60,
-                            decoration: BoxDecoration(
-                                color: Colors.amber[300],
-                                borderRadius: BorderRadius.circular(50)),
-                            child: Image.asset(
-                              "assets/images/profile.png",
-                              height: 20,
-                              width: 20,
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                   const SizedBox(height: 20),

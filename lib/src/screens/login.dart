@@ -73,7 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   padding: const EdgeInsets.fromLTRB(10, 20, 10, 10),
                   child: Container(
                     child: Text(
-                      "Let's start Schedule your Activity",
+                      "Start scheduling your activities",
                       style:
                           TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
                     ),
